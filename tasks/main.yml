@@ -1,0 +1,7 @@
+---
+- name: Install required packages for automysqlbackup
+  package:
+    name: "{{ automysqlbackup_packages }}"
+    state: present
+  tags:
+    - packages
