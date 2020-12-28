@@ -1,4 +1,10 @@
 ---
+- name: Gather OS specific variables
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version }}.yml"
+    - "{{ ansible_distribution|lower }}.yml"
+
 - name: Install required packages for automysqlbackup
   package:
     name: "{{ automysqlbackup_packages }}"
