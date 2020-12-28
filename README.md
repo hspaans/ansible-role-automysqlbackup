@@ -1,37 +1,29 @@
-Role Name
-=========
-
+# Role Name
 
 Installs [autmysqlbackup](https://sourceforge.net/projects/automysqlbackup/).
 
-Requirements
-------------
+## Requirements
 
 None.
 
-Role Variables
---------------
+## Role Variables
 
 Default variables are set in `defaults/main.yml` to match the WP-CLI and role version.
 
-Dependencies
-------------
+## Dependencies
 
 No dependency on other Ansible Galaxy roles.
 
-Example Playbook
-----------------
+## Example Playbook
 
     - hosts: servers
       roles:
-         - { role: hspaans.automysqlbackup, become: true }
+        - { role: hspaans.automysqlbackup, become: true }
 
-License
--------
+## License
 
 MIT
 
-Author Information
-------------------
+## Author Information
 
 This role was created in 2020 by [Hans Spaans](https://github.com/hspaans).
