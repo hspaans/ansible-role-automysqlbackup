@@ -1,6 +1,6 @@
 # Role Name
 
-Installs [autmysqlbackup](https://sourceforge.net/projects/automysqlbackup/).
+Installs [automysqlbackup](https://sourceforge.net/projects/automysqlbackup/).
 
 ## Requirements
 
@@ -14,11 +14,26 @@ Default variables are set in `defaults/main.yml` to match the WP-CLI and role ve
 
 No dependency on other Ansible Galaxy roles.
 
+## Platforms
+
+The role is tested agains [LTS](https://en.wikipedia.org/wiki/Long-term_support) distribution versions with official support and fall within N and N-1.
+
+| Platform | Versions       |
+|:--------:|:--------------:|
+| Debian   | 9 (Stretch)    |
+| Debian   | 10 (Buster)    |
+| Ubuntu   | 18.04 (Bionic) |
+| Ubuntu   | 20.04 (Focal)  |
+
 ## Example Playbook
 
-    - hosts: servers
-      roles:
-        - { role: hspaans.automysqlbackup, become: true }
+```yml
+---
+- hosts: servers
+  roles:
+    - role: hspaans.automysqlbackup
+      become: true
+```
 
 ## License
 
