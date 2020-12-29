@@ -5,6 +5,12 @@
     - "{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version }}.yml"
     - "{{ ansible_distribution|lower }}.yml"
 
+- name: Update apt cache (on Debian).
+  apt:
+    update_cache: true
+    cache_valid_time: 3600
+  when: ansible_os_family == 'Debian'
+
 - name: Install required packages for automysqlbackup
   package:
     name: "{{ automysqlbackup_packages }}"
