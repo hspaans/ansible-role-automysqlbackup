@@ -14,10 +14,6 @@ galaxy_info:
         - stretch
         - buster
         - bullseye
-    - name: Ubuntu
-      versions:
-        - bionic
-        - focal
 
   galaxy_tags:
     - mysql
