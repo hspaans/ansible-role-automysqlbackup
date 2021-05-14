@@ -7,29 +7,78 @@ lint: |
   set -e
   yamllint `git ls-files '*.yaml' '*.yml'`
   ansible-lint
-  flake8
+  flake8 `git ls-files '*.pc'`
 platforms:
-  - name: debian-9
-    image: "ghcr.io/hspaans/molecule-container-debian:9"
-    command: ""
+  # - name: debian-9
+  #   image: "ghcr.io/hspaans/molecule-container-debian:9"
+  #   command: ""
+  #   volumes:
+  #     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  #   privileged: true
+  #   pre_build_image: true
+  # - name: debian-10
+  #   image: "ghcr.io/hspaans/molecule-container-debian:10"
+  #   command: ""
+  #   volumes:
+  #     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  #   privileged: true
+  #   pre_build_image: true
+  # - name: debian-11
+  #   image: "ghcr.io/hspaans/molecule-container-debian:11"
+  #   command: ""
+  #   volumes:
+  #     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  #   privileged: true
+  #   pre_build_image: true
+  # - name: debian-10b
+  #   image: debian:buster
+  #   tmpfs:
+  #     - /run
+  #     - /tmp
+  #   volumes:
+  #     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  #   privileged: true
+  #   pre_build_image: true
+  - name: debian-stretch
+    image: docker.io/debian:stretch
+    tmpfs:
+      - /run
+      - /tmp
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
-    pre_build_image: true
-  - name: debian-10
-    image: "ghcr.io/hspaans/molecule-container-debian:10"
-    command: ""
+  - name: debian-buster
+    image: docker.io/debian:buster
+    tmpfs:
+      - /run
+      - /tmp
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
-    pre_build_image: true
-  - name: debian-11
-    image: "ghcr.io/hspaans/molecule-container-debian:11"
-    command: ""
+  - name: debian-bullseye
+    image: docker.io/debian:bullseye
+    tmpfs:
+      - /run
+      - /tmp
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
-    pre_build_image: true
+  - name: ubuntu-bionic
+    image: docker.io/ubuntu:bionic
+    tmpfs:
+      - /run
+      - /tmp
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+  - name: ubuntu-focal
+    image: docker.io/ubuntu:focal
+    tmpfs:
+      - /run
+      - /tmp
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
 provisioner:
   name: ansible
 verifier:

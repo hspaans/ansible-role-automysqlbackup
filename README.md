@@ -18,16 +18,9 @@ No dependency on other Ansible Galaxy roles.
 
 The role is tested agains [LTS](https://en.wikipedia.org/wiki/Long-term_support) distribution versions with official support and fall within N and N-1.
 
-| Platform | Versions       |
-|:--------:|:--------------:|
-| Debian   | 9 (Stretch)    |
-| Debian   | 10 (Buster)    |
-| Ubuntu   | 18.04 (Bionic) |
-| Ubuntu   | 20.04 (Focal)  |
-
 ## Example Playbook
 
-```yml
+```yaml
 ---
 - hosts: servers
   roles:
