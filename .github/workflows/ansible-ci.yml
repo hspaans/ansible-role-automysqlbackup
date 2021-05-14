@@ -32,10 +32,12 @@ jobs:
       - name: Check out the codebase
         uses: actions/checkout@v2.3.4
 
-      - name: Run Molecule via Tox
+      - name: Set up Python
         uses: actions/setup-python@v2.2.2
         with:
           python-version: "3.x"
+
+      - name: Run Molecule via Tox
         run: |
           pip3 install tox
           tox
