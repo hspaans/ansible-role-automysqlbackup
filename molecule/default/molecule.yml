@@ -7,7 +7,7 @@ lint: |
   set -e
   yamllint `git ls-files '*.yaml' '*.yml'`
   ansible-lint
-  flake8 `git ls-files '*.pc'`
+  flake8 `git ls-files '*.py'`
 platforms:
   # - name: debian-9
   #   image: "ghcr.io/hspaans/molecule-container-debian:9"
