@@ -20,8 +20,6 @@ jobs:
         uses: github/super-linter@v4.2.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ANSIBLE_DIRECTORY: /
-          VALIDATE_ANSIBLE: false
           VALIDATE_DOCKERFILE: false
           VALIDATE_DOCKERFILE_HADOLINT: false
 
