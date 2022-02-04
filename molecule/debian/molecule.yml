@@ -47,12 +47,6 @@ provisioner:
   playbooks:
     converge: ../resources/playbooks/converge.yml
     prepare: ../resources/playbooks/prepare.yml
-  inventory:
-    group_vars:
-      all:
-        fd_directories:
-          - path: /srv/app01
-          - path: /srv/app02
 verifier:
   name: testinfra
   directory: ../resources/tests/
