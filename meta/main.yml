@@ -14,10 +14,6 @@ galaxy_info:
         - buster
         - bullseye
         - bookworm
-    - name: Ubuntu
-      versions:
-        - focal
-        - jammy
 
   galaxy_tags:
     - mysql
