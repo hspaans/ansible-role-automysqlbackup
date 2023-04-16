@@ -1,9 +1,17 @@
 ---
 - name: Update apt cache (on Debian).
+  when: ansible_os_family == 'Debian'
   ansible.builtin.apt:
     update_cache: true
     cache_valid_time: 3600
+
+- name: Install required system packages on Debian or Ubuntu
   when: ansible_os_family == 'Debian'
+  ansible.builtin.package:
+    name: apt-utils
+    state: present
+  tags:
+    - packages
 
 - name: Install required packages for automysqlbackup
   ansible.builtin.package:
